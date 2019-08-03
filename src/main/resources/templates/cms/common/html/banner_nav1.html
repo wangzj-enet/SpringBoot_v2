@@ -1,0 +1,22 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<div  th:fragment="banner_nav1(banner_nav)">
+    <div class="public-banner" id="banner">
+        <div class="wrap">
+            <img class="img-responsive"
+                 th:src="${banner_nav.cmsFileCode}" th:alt="test">
+        </div>
+    </div>
+
+    <div class="public-nav">
+        <div class="container">
+            <ul>
+                <li class="active"><a th:href="${banner_nav.titleHtmlUrl}" th:text="${banner_nav.title}" >ABOUT SKYJADE</a></li>
+            </ul>
+            <ol>
+                <li class="home"><a th:href="${banner_nav.moreHtmlUrl}" th:text="${banner_nav.more}">Home</a></li>
+                <li  th:text="${banner_nav.title}">ABOUT SKYJADE</li>
+            </ol>
+        </div>
+    </div>
+	
+</div>

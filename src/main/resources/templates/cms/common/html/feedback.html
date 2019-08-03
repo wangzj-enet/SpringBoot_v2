@@ -1,0 +1,25 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<div  th:fragment="feedback(feedback,feedbackItemList)">
+    <div class="feedback">
+        <div class="container">
+            <div class="txt">
+                <h2 th:text="${feedback.title}">FEEDBACK</h2>
+            </div>
+            <div class="carousel">
+                <div class="owl-carousel owl-theme" id="owl-carousel-feedback">
+                    <div class="item item-1" th:each="feedbackItem : ${feedbackItemList}">
+                        <p th:text="${feedbackItem.descri}"></p>
+                        <span  th:text="${feedbackItem.title}">by Willison William(UK)</span>
+                        <div class="userpic">
+                            <img class="lazyOwl"
+                                 th:data-src="${feedbackItem.cmsFileCode}"
+                                 alt="Willison William(UK)">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+	
+</div>

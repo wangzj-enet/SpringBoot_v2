@@ -1,0 +1,16 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<div  th:fragment="infomation(infomation)">
+    <div class="send">
+        <div class="bg">
+            <img th:src="${infomation.cmsFileCode}" th:alt="test"/>
+        </div>
+        <div class="mask"></div>
+        <div class="container">
+            <p th:text="${infomation.title}">Please fill in the information convenient we send you samples</p>
+            <!--<p th:utext="'<h1>test！</h1>'"></p>
+            <img src="static/cms/httplocalhost/img/images_upload/8cf0546763687486dc6c209a4f53007f.jpg" th:alt="test"/>-->
+
+        </div>
+    </div>
+	
+</div>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<!-- awwwb.com -->
+<!-- Added by HTTrack -->
+<meta http-equiv="content-type" content="text/html;charset=utf-8"><!-- /Added by HTTrack -->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#bf3030">
+
+    <title>product</title>
+    <meta name="keywords" content="PRODUCT,PRODUCTS,Zhengzhou Champion Sports Goods Co.,Ltd.">
+    <meta name="description" content="PRODUCT,PRODUCTS,Zhengzhou Champion Sports Goods Co.,Ltd.">
+
+    <link rel="stylesheet" th:href="@{static/cms/httplocalhost/css/bootstrap.css}">
+    <link rel="stylesheet" th:href="@{static/cms/httplocalhost/css/iconfont.css}">
+    <link rel="stylesheet" th:href="@{static/cms/httplocalhost/css/jquery.carousel.css}">
+    <link rel="stylesheet" th:href="@{static/cms/httplocalhost/css/jquery.fancybox.css}">
+    <link rel="stylesheet" th:href="@{static/cms/httplocalhost/css/jquery.imagezoom.css}">
+
+    <link rel="stylesheet" th:href="@{static/cms/httplocalhost/css/style.css}">
+    <link rel="stylesheet" th:href="@{static/cms/httplocalhost/css/style_v2.css}">
+</head>
+<body>
+
+<!-- header 通用-->
+<div th:insert="cms/common/html/header :: header(${nav})"></div>
+<!-- 结束header通用 -->
+
+
+<div class="public-banner" id="banner">
+    <div class="wrap">
+        <img class="img-responsive" th:src="${homeMap['banner_nav'].cmsFileCode}">
+    </div>
+</div>
+
+<div class="public-nav">
+    <div class="container">
+        <ul>
+            <li th:each="banner_nav2 : ${banner_nav2_list}">
+                <a th:href="${banner_nav2.titleHtmlUrl}" th:text="${banner_nav2.title}">Artificial grass</a>
+            </li>
+        </ul>
+        <ol>
+            <li class="home"><a th:href="${homeMap['banner_nav'].moreHtmlUrl}" th:text="${homeMap['banner_nav'].more}">Home</a></li>
+            <li><a th:href="${homeMap['banner_nav'].titleHtmlUrl}" th:text="${homeMap['banner_nav'].title}">Home</a></li>
+        </ol>
+    </div>
+</div>
+
+<div class="product-nav">
+    <div class="container">
+        <ul>
+
+            <li th:each="banner_nav3 : ${banner_nav3_list}">
+                <a th:href="${banner_nav3.titleHtmlUrl}" th:text="${banner_nav3.title}">Artificial grass</a>
+            </li>
+
+        </ul>
+    </div>
+</div>
+
+<div class="product-list">
+    <div class="container">
+        <ul class="row">
+            <li class="col-lg-3 col-md-4 col-sm-6 col-xs-12" th:each="product : ${page.list}">
+                <div class="list">
+                    <a th:href="${product.titleHtmlUrl}" class="img-box" target="_blank">
+                        <img class="lazy"
+                             th:data-src="${product.cmsFileCode}"
+                             th:alt="${product.title}">
+                    </a>
+                    <p><a th:href="${product.titleHtmlUrl}" th:title="${product.title}" th:text="${product.title}">Football Grass ECO T</a></p>
+                </div>
+            </li>
+        </ul>
+        <div th:insert="cms/common/html/pager::pager(${page},'product.html',${title})"></div>
+    </div>
+</div>
+
+
+<style>
+    .product-list p {
+        font-size: 16px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 100%;
+    }
+</style>
+
+
+<div th:insert="cms/common/html/sliderbar :: sliderbar(${sliderbar})"></div>
+
+<div th:insert="cms/common/html/footer :: footer(${footer},${footer_1},${footer_2},${footer_4})"></div>
+<div th:insert="cms/common/html/section :: section(${homeMap['section']},${section})"></div>
+
+<div class="loadjs">
+    <script th:src="@{static/cms/httplocalhost/js/jquery-2.1.4.min.js}"></script>
+    <script th:src="@{static/cms/httplocalhost/js/jquery.carousel.min.js}"></script>
+    <script th:src="@{static/cms/httplocalhost/js/jquery.fancybox.min.js}"></script>
+    <script th:src="@{static/cms/httplocalhost/js/jquery.lazyload.min.js}"></script>
+    <script th:src="@{static/cms/httplocalhost/js/jquery.imagezoom.min.js}"></script>
+
+    <script th:src="@{static/cms/httplocalhost/js/bootstrap.js}"></script>
+    <script th:src="@{static/cms/httplocalhost/js/jquery.countto.min.js}"></script>
+    <script th:src="@{static/cms/httplocalhost/js/main.js}"></script>
+</div>
+
+<div class="hidden">
+    <script type="text/javascript">
+        var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+        document.write(unescape("%3Cspan id='cnzz_stat_icon_1262931944-'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s13.cnzz.com/z_stat.php%3Fid%3D1262931944%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+</div>
+
+
+</body>
+
+<!-- awwwb.com -->
+<!-- Added by HTTrack -->
+<meta http-equiv="content-type" content="text/html;charset=utf-8"><!-- /Added by HTTrack -->
+</html>

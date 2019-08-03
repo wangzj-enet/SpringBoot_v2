@@ -1,0 +1,168 @@
+﻿<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<meta http-equiv="content-type" content="text/html;charset=utf-8">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#bf3030">
+
+    <title th:text="${product_item.title}">football artificial grass|football grass</title>
+    <meta name="keywords" th:content="${product_item.title}">
+    <meta name="description" th:content="${product_detail.descri}">
+
+    <link rel="stylesheet" th:href="@{static/cms/httplocalhost/css/bootstrap.css}">
+    <link rel="stylesheet" th:href="@{static/cms/httplocalhost/css/iconfont.css}">
+    <link rel="stylesheet" th:href="@{static/cms/httplocalhost/css/jquery.carousel.css}">
+    <link rel="stylesheet" th:href="@{static/cms/httplocalhost/css/jquery.fancybox.css}">
+    <link rel="stylesheet" th:href="@{static/cms/httplocalhost/css/jquery.imagezoom.css}">
+
+    <link rel="stylesheet" th:href="@{static/cms/httplocalhost/css/style.css}">
+    <link rel="stylesheet" th:href="@{static/cms/httplocalhost/css/style_v2.css}">
+</head>
+<body>
+
+<!-- header 通用-->
+<div th:insert="cms/common/html/header :: header(${nav})"></div>
+<!-- 结束header通用 -->
+
+
+<div class="public-banner" id="banner">
+    <div class="wrap">
+        <img class="img-responsive" th:src="${homeMap['banner_nav'].cmsFileCode}">
+    </div>
+</div>
+
+<div class="public-nav">
+    <div class="container">
+        <ul>
+            <li th:each="banner_nav2 : ${banner_nav2_list}">
+                <a th:href="${banner_nav2.titleHtmlUrl}" th:text="${banner_nav2.title}">Artificial grass</a>
+            </li>
+        </ul>
+        <ol>
+            <li class="home"><a th:href="${homeMap['banner_nav'].moreHtmlUrl}" th:text="${homeMap['banner_nav'].more}">Home</a></li>
+            <li><a th:href="${homeMap['banner_nav'].titleHtmlUrl}" th:text="${homeMap['banner_nav'].title}">Home</a></li>
+        </ol>
+    </div>
+</div>
+
+<div class="product-nav">
+    <div class="container">
+        <ul>
+
+            <li th:each="banner_nav3 : ${banner_nav3_list}">
+                <a th:href="${banner_nav3.titleHtmlUrl}" th:text="${banner_nav3.title}">Artificial grass</a>
+            </li>
+
+        </ul>
+    </div>
+</div>
+
+
+<style>
+    .owl-pagination {
+        position: relative;
+        bottom: -40px;
+    }
+
+    .details-one .owl-theme .owl-controls .owl-page span {
+        background-color: #a2a2a2;
+    }
+
+    .details-one .owl-controls .owl-page.active span,
+    .details-one .owl-controls .owl-page:hover span {
+        background-color: #202c5c !important;
+    }
+</style>
+<div class="details">
+    <div class="container">
+        <div class="details-one row">
+            <div class="col-md-6 col-sm-12 carousel">
+                <div class="owl-carousel owl-theme" id="owl-index">
+                    <div class="item" th:each="product_descri_img : ${product_descri_img_list}">
+                        <a class="img-box" href="javascript:;">
+                            <img class="img-responsive lazyOwl jqzoom"
+                                 th:data-src="${product_descri_img.cmsFileCode}"
+                                 th:rel="${product_descri_img.cmsFileCode}"
+                                 th:alt="${product_descri_img.title}">
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-12 txt">
+                <h1 th:text="${product_item.title}"></h1>
+                <p th:utext="${product_descri.descri}"></p>
+                <span class="inquire-btn" id="inquiry">INQUIRE NOW</span>
+            </div>
+        </div>
+
+        <div class="tab-wrap">
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab"
+                                                          data-toggle="tab">Product details</a></li>
+                <li role="presentation"><a href="#profile" aria-controls="profile" role="tab"
+                                           data-toggle="tab">Video</a></li>
+            </ul>
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="home" th:utext="${product_detail.descri}"></div>
+
+                <div role="tabpanel" class="tab-pane" id="profile" th:utext="${product_detail.more}"></div>
+            </div>
+        </div>
+
+        <div class="inquire-now">
+            <h3>Inquire Now</h3>
+            <p>If you have any questions,feedback or comments,please fill out the form below and we will reply you back
+                as soon as possible.</p>
+            <form class="feedback-form" onsubmit="return false;" id="inquiry-form">
+                <input class="product-name" type="text" th:value="|Product: ${product_item.title}|" name="title" readonly>
+                <div class="ipt-wrap row">
+                    <div class="col-md-4 col-sm-12">
+                        <input type="text" placeholder="Name" name="fullname">
+                    </div>
+                    <div class="col-md-4 col-sm-12">
+                        <input type="text" placeholder="Telephone" name="tel">
+                    </div>
+                    <div class="col-md-4 col-sm-12">
+                        <input type="text" placeholder="E-mail" name="email">
+                    </div>
+                </div>
+                <textarea placeholder="Message" name="content"></textarea>
+                <input type="hidden" name="id" value="book"/>
+                <input type="hidden" name="_spam" value="xiFAQ407Ke"/>
+                <a href="#" class="submit"><input class="submit" type="submit" value="SUBMIT"/></a>
+            </form>
+        </div>
+    </div>
+</div>
+<div th:insert="cms/common/html/sliderbar :: sliderbar(${sliderbar})"></div>
+
+<div th:insert="cms/common/html/footer :: footer(${footer},${footer_1},${footer_2},${footer_4})"></div>
+<div th:insert="cms/common/html/section :: section(${homeMap['section']},${section})"></div>
+
+<div class="loadjs">
+    <script th:src="@{static/cms/httplocalhost/js/jquery-2.1.4.min.js}"></script>
+    <script th:src="@{static/cms/httplocalhost/js/jquery.carousel.min.js}"></script>
+    <script th:src="@{static/cms/httplocalhost/js/jquery.fancybox.min.js}"></script>
+    <script th:src="@{static/cms/httplocalhost/js/jquery.lazyload.min.js}"></script>
+    <script th:src="@{static/cms/httplocalhost/js/jquery.imagezoom.min.js}"></script>
+
+    <script th:src="@{static/cms/httplocalhost/js/bootstrap.js}"></script>
+    <script th:src="@{static/cms/httplocalhost/js/jquery.countto.min.js}"></script>
+    <script th:src="@{static/cms/httplocalhost/js/main.js}"></script>
+</div>
+
+<div class="hidden">
+    <script type="text/javascript">
+        var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+        document.write(unescape("%3Cspan id='cnzz_stat_icon_1262931944-'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s13.cnzz.com/z_stat.php%3Fid%3D1262931944%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+</div>
+
+
+</body>
+
+
+<meta http-equiv="content-type" content="text/html;charset=utf-8">
+</html>

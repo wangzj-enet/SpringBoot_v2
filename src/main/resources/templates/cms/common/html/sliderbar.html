@@ -1,0 +1,11 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<div  th:fragment="sliderbar(sliderbar)">
+	<div class="sliderbar">
+		<a th:class="${item.more}" th:href="${item.moreHtmlUrl}" th:target="${item.moreTarget}" th:each="item : ${sliderbar}" th:alt="test"></a>
+		<!--<a class="iconfont icon-s" href="skype:selina.skyjade?chat"></a>
+		<a class="iconfont icon-email" href="mailto:Yony@skyjades.cn"></a>
+		<a class="iconfont icon-wangwang" href="http://amos.im.alisoft.com/msg.aw?v=2&amp;uid=cn1080430015&amp;site=skyjades&amp;s=2" target="_blank"></a>
+		<a class="iconfont icon-zuoqianfang" id="gotop" href="javascript:;"></a>-->
+	</div>
+	
+</div>

@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.fc.test.mapper.auto.CmsHtmlLinkMapper">
+  <resultMap id="BaseResultMap" type="com.fc.test.model.auto.CmsHtmlLink" >
+    <result column="id" property="id" jdbcType="VARCHAR" />
+    <result column="code" property="code" jdbcType="VARCHAR" />
+    <result column="html_url" property="htmlUrl" jdbcType="VARCHAR" />
+    <result column="title" property="title" jdbcType="VARCHAR" />
+    <result column="title_zh" property="titleZh" jdbcType="VARCHAR" />
+    <result column="title_en" property="titleEn" jdbcType="VARCHAR" />
+    <result column="target" property="target" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+<sql id="Base_Column_List" >
+	id,code,html_url,title,title_zh,title_en,target
+</sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.fc.test.model.auto.CmsHtmlLinkExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from cms_html_link
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="String" >
+    select 
+    <include refid="Base_Column_List" />
+    from cms_html_link
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+
+  <delete id="deleteByPrimaryKey" parameterType="String" >
+    delete from cms_html_link
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+
+  <delete id="deleteByExample" parameterType="com.fc.test.model.auto.CmsHtmlLinkExample" >
+    delete from cms_html_link
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  
+  <insert id="insert" parameterType="com.fc.test.model.auto.CmsHtmlLink" >
+    insert into cms_html_link (
+      	  	       id,
+       	  	       code,
+       	  	       html_url,
+       	  	       title,
+       	  	       title_zh,
+       	  	       title_en,
+       	  	    	  target
+       	    )
+    values (
+	  	  	      	#{id,jdbcType=VARCHAR},
+       	  	      	#{code,jdbcType=VARCHAR},
+       	  	      	#{htmlUrl,jdbcType=VARCHAR},
+       	  	      	#{title,jdbcType=VARCHAR},
+       	  	      	#{titleZh,jdbcType=VARCHAR},
+       	  	      	#{titleEn,jdbcType=VARCHAR},
+       	  	    	  #{target,jdbcType=VARCHAR}
+       	    )
+  </insert>
+  
+  <insert id="insertSelective" parameterType="com.fc.test.model.auto.CmsHtmlLink" >
+    insert into cms_html_link
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+          
+      <if test="id != null" >
+        id,
+      </if>
+      
+         
+      <if test="code != null" >
+        code,
+      </if>
+      
+         
+      <if test="htmlUrl != null" >
+        html_url,
+      </if>
+      
+         
+      <if test="title != null" >
+        title,
+      </if>
+      
+         
+      <if test="titleZh != null" >
+        title_zh,
+      </if>
+      
+         
+      <if test="titleEn != null" >
+        title_en,
+      </if>
+      
+         
+      <if test="target != null" >
+        target,
+      </if>
+      
+         </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+          <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
+          <if test="code != null" >
+        #{code,jdbcType=VARCHAR},
+      </if>
+          <if test="htmlUrl != null" >
+        #{htmlUrl,jdbcType=VARCHAR},
+      </if>
+          <if test="title != null" >
+        #{title,jdbcType=VARCHAR},
+      </if>
+          <if test="titleZh != null" >
+        #{titleZh,jdbcType=VARCHAR},
+      </if>
+          <if test="titleEn != null" >
+        #{titleEn,jdbcType=VARCHAR},
+      </if>
+          <if test="target != null" >
+        #{target,jdbcType=VARCHAR},
+      </if>
+        </trim>
+  </insert>
+  
+  <select id="countByExample" parameterType="com.fc.test.model.auto.CmsHtmlLinkExample" resultType="String" >
+    select count(*) from cms_html_link
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  
+  <update id="updateByExampleSelective" parameterType="map" >
+    update cms_html_link
+    <set >
+          <if test="record.id != null" >
+        id = #{record.id,jdbcType=VARCHAR},
+      </if>
+          <if test="record.code != null" >
+        code = #{record.code,jdbcType=VARCHAR},
+      </if>
+          <if test="record.htmlUrl != null" >
+        html_url = #{record.htmlUrl,jdbcType=VARCHAR},
+      </if>
+          <if test="record.title != null" >
+        title = #{record.title,jdbcType=VARCHAR},
+      </if>
+          <if test="record.titleZh != null" >
+        title_zh = #{record.titleZh,jdbcType=VARCHAR},
+      </if>
+          <if test="record.titleEn != null" >
+        title_en = #{record.titleEn,jdbcType=VARCHAR},
+      </if>
+          <if test="record.target != null" >
+        target = #{record.target,jdbcType=VARCHAR},
+      </if>
+         
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  
+  
+  <update id="updateByExample" parameterType="map" >
+    update cms_html_link
+    set
+            	     	 id = #{record.id,jdbcType=VARCHAR},
+    	       
+        	     	 code = #{record.code,jdbcType=VARCHAR},
+    	       
+        	     	 html_url = #{record.htmlUrl,jdbcType=VARCHAR},
+    	       
+        	     	 title = #{record.title,jdbcType=VARCHAR},
+    	       
+        	     	 title_zh = #{record.titleZh,jdbcType=VARCHAR},
+    	       
+        	     	 title_en = #{record.titleEn,jdbcType=VARCHAR},
+    	       
+        	     	 target = #{record.target,jdbcType=VARCHAR},
+    	       
+        <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  
+    <update id="updateByPrimaryKeySelective" parameterType="com.fc.test.model.auto.CmsHtmlLink" >
+    update cms_html_link
+    <set >
+                          <if test="code != null" >
+        code = #{code,jdbcType=VARCHAR},
+      </if>
+                      <if test="htmlUrl != null" >
+        html_url = #{htmlUrl,jdbcType=VARCHAR},
+      </if>
+                      <if test="title != null" >
+        title = #{title,jdbcType=VARCHAR},
+      </if>
+                      <if test="titleZh != null" >
+        title_zh = #{titleZh,jdbcType=VARCHAR},
+      </if>
+                      <if test="titleEn != null" >
+        title_en = #{titleEn,jdbcType=VARCHAR},
+      </if>
+                      <if test="target != null" >
+        target = #{target,jdbcType=VARCHAR},
+      </if>
+              </set>
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+
+  <update id="updateByPrimaryKey" parameterType="com.fc.test.model.auto.CmsHtmlLink" >
+    update cms_html_link
+    set 
+             	        	    	 			code = #{code,jdbcType=VARCHAR}
+		     	        	    	 			html_url = #{htmlUrl,jdbcType=VARCHAR}
+		     	        	    	 			title = #{title,jdbcType=VARCHAR}
+		     	        	    	 			title_zh = #{titleZh,jdbcType=VARCHAR}
+		     	        	    	 			title_en = #{titleEn,jdbcType=VARCHAR}
+		     	        	    	 			target = #{target,jdbcType=VARCHAR}
+		     	        where id = #{id,jdbcType=VARCHAR}
+  </update>
+   </mapper>

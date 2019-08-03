@@ -1,0 +1,54 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<div  th:fragment="footer(footer,footer1,footer2,footer4)">
+	<div class="footer">
+		<div class="container">
+			<div th:class="${footer[0].more}">
+				<h4 th:text="${footer[0].title}"></h4>
+				<ul>
+					<li  th:each="item : ${footer1}"><a th:href="${item.titleHtmlUrl}"  th:text="${item.title}" >Faq</a></li>
+				</ul>
+
+			</div>
+			<div th:class="${footer[1].more}">
+				<h4 th:text="${footer[1].title}"></h4>
+				<ul>
+					<li th:each="item : ${footer2}"><a th:href="${item.titleHtmlUrl}" th:text="${item.title}"></a></li>
+				</ul>
+			</div>
+			<div th:class="${footer[2].more}">
+				<h4 th:text="${footer[2].title}"></h4>
+				<form class="feedback-form">
+					<input class="ipt" type="text" placeholder="Name" name="fullname">
+					<input class="ipt" type="email" placeholder="Email" name="email">
+					<textarea class="ipt" placeholder="Message" name="content"></textarea>
+
+					<input type="hidden" name="title" value="客户留言: 2019-07-02T12:46:24+08:00">
+					<input type="hidden" name="id" value="book"/>
+					<input type="hidden" name="_spam" value=""/>
+					<a href="#" class="submit"><input class="submit" type="submit" value="&gt;SUBMIT"/></a>
+				</form>
+			</div>
+			<style>
+				.footer .mail > a:nth-child(n+2) {
+					display: block;
+					margin-left: 46px;
+				}
+
+				.contact .left p.mail > a:nth-child(n+3) {
+					display: block;
+					margin-left: 48px;
+				}
+			</style>
+
+			<div th:class="${footer[3].more}">
+				<h4 th:text="${footer[3].title}"></h4>
+				<ul>
+					<li th:class="${item.more}"   th:utext="|${item.title} : ${item.descri}|" th:each="item : ${footer4}"></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	
+</div>
+
+

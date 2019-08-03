@@ -1,0 +1,17 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<div  th:fragment="section(section,sectionList)">
+
+    <div class="section">
+        <div class="container">
+            <p th:text="${section.descri}">Copyright © 2017 Zhengzhou Champion Sports Goods Co.,Ltd.</p>
+            <a class="hicheng" th:target="${section.titleTarget}" th:href="${section.titleHtmlUrl}" th:text="${section.title}">Powered by HiCheng</a>
+            <span id="cnzz_stat_icon_1262931944" style="margin-left: 10px;"></span>
+            <ul>
+                <li th:class="${item.more}" th:each="item : ${sectionList}">
+                    <a th:href="${item.moreHtmlUrl}" th:target="${item.moreTarget}" th:alt="test"></a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</div>

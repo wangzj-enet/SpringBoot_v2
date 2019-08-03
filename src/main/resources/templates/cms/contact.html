@@ -1,0 +1,123 @@
+﻿<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+
+<meta http-equiv="content-type" content="text/html;charset=utf-8">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#bf3030">
+
+    <title>contact</title>
+    <meta name="keywords" content="Contact Us,Zhengzhou Champion Sports Goods Co.,Ltd.">
+    <meta name="description" content="Contact Us,Zhengzhou Champion Sports Goods Co.,Ltd.">
+
+    <link rel="stylesheet" th:href="@{static/cms/httplocalhost/css/bootstrap.css}">
+    <link rel="stylesheet" th:href="@{static/cms/httplocalhost/css/iconfont.css}">
+    <link rel="stylesheet" th:href="@{static/cms/httplocalhost/css/jquery.carousel.css}">
+    <link rel="stylesheet" th:href="@{static/cms/httplocalhost/css/jquery.fancybox.css}">
+    <link rel="stylesheet" th:href="@{static/cms/httplocalhost/css/jquery.imagezoom.css}">
+
+    <link rel="stylesheet" th:href="@{static/cms/httplocalhost/css/style.css}">
+    <link rel="stylesheet" th:href="@{static/cms/httplocalhost/css/style_v2.css}">
+</head>
+<body>
+
+<!-- header 通用-->
+<div th:insert="cms/common/html/header :: header(${nav})"></div>
+<!-- 结束header通用 -->
+
+
+
+<div th:insert="cms/common/html/banner_nav1 :: banner_nav1(${homeMap['banner_nav']})"></div>
+
+<style>
+    .footer .mail > a:nth-child(n+2) {
+        display: block;
+        margin-left: 46px;
+    }
+
+    .contact .left p.mail > a:nth-child(n+3) {
+        display: block;
+        margin-left: 48px;
+    }
+</style>
+<div class="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-5 left">
+                <!--<p class="head-office"><span>Head Office:</span> Room 1210, Tower 4, No.31 Longcheng Road, Qingdao,
+                    China</p>
+                <p class="production"><span>Production and Warehouse:</span> No.17 Renmin East Road, Nancao Village,
+                    Wanshi Town, Yixing, Jiangsu</p>
+                <p class="phone"><span>Tel: </span><a href="tel:8653280912706">+86 532 8091 2706</a></p>
+                <p class="fax"><span>Fax: </span>+86 532 80912606</p>
+                <p class="mail"><span>Email: </span><a href="mailto:yony@skyjades.cn">Yony@skyjades.cn</a></p>
+                <p class="phone"><span>Mobile/Whatsapp: </span><a>+86 15964256510</a></p>-->
+
+                <p  th:class="${item.more}"  th:each="item : ${footer_4}"><span  th:text="${item.title}"></span> <span  th:utext="${item.descri}" > </span></p>
+
+
+            </div>
+            <div class="col-sm-12 col-md-6 right">
+                <form class="feedback-form" id="form-email">
+                    <ul class="row">
+                        <li class="col-sm-6">
+                            <input type="text" placeholder="Name" name="fullname" id="fullname">
+                        </li>
+                        <li class="col-sm-6">
+                            <input type="text" placeholder="E-mail" name="email" id="email">
+                        </li>
+                        <li class="col-sm-6">
+                            <input type="text" placeholder="Telephone" name="tel" id="tel">
+                        </li>
+                        <li class="col-sm-6">
+                            <input type="text" placeholder="Company" name="company" id="company">
+                        </li>
+                        <li class="col-sm-12">
+                            <input type="text" placeholder="Title" name="title" id="title">
+                        </li>
+                        <li class="col-sm-12">
+                            <textarea name="content" id="content" placeholder="Message…"></textarea>
+                        </li>
+                    </ul>
+                    <input type="hidden" name="id" value="book"/>
+                    <input type="hidden" name="_spam" value="tDTy56moyb"/>
+                    <a href="#" class="submit"><input class="submit" type="submit" value="SUBMIT"/></a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div th:insert="cms/common/html/sliderbar :: sliderbar(${sliderbar})"></div>
+
+<div th:insert="cms/common/html/footer :: footer(${footer},${footer_1},${footer_2},${footer_4})"></div>
+<div th:insert="cms/common/html/section :: section(${homeMap['section']},${section})"></div>
+
+<div class="loadjs">
+    <script th:src="@{static/cms/httplocalhost/js/jquery-2.1.4.min.js}"></script>
+    <script th:src="@{static/cms/httplocalhost/js/jquery.carousel.min.js}"></script>
+    <script th:src="@{static/cms/httplocalhost/js/jquery.fancybox.min.js}"></script>
+    <script th:src="@{static/cms/httplocalhost/js/jquery.lazyload.min.js}"></script>
+    <script th:src="@{static/cms/httplocalhost/js/jquery.imagezoom.min.js}"></script>
+
+    <script th:src="@{static/cms/httplocalhost/js/bootstrap.js}"></script>
+    <script th:src="@{static/cms/httplocalhost/js/jquery.countto.min.js}"></script>
+    <script th:src="@{static/cms/httplocalhost/js/main.js}"></script>
+
+
+</div>
+
+<div class="hidden">
+    <script type="text/javascript">
+        var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+        document.write(unescape("%3Cspan id='cnzz_stat_icon_1262931944-'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s13.cnzz.com/z_stat.php%3Fid%3D1262931944%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+</div>
+
+
+</body>
+
+
+<meta http-equiv="content-type" content="text/html;charset=utf-8">
+</html>

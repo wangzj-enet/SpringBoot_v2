@@ -1,0 +1,779 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.fc.test.mapper.auto.CmsHtmlModuleMapper">
+  <resultMap id="BaseResultMap" type="com.fc.test.model.auto.CmsHtmlModule" >
+    <result column="id" property="id" jdbcType="VARCHAR" />
+    <result column="cms_html_link_code" property="cmsHtmlLinkCode" jdbcType="VARCHAR" />
+    <result column="code" property="code" jdbcType="VARCHAR" />
+    <result column="parent_code" property="parentCode" jdbcType="VARCHAR" />
+    <result column="cms_file_code" property="cmsFileCode" jdbcType="VARCHAR" />
+    <result column="title" property="title" jdbcType="VARCHAR" />
+    <result column="title_zh" property="titleZh" jdbcType="VARCHAR" />
+    <result column="title_en" property="titleEn" jdbcType="VARCHAR" />
+    <result column="descri" property="descri" jdbcType="VARCHAR" />
+    <result column="descri_zh" property="descriZh" jdbcType="VARCHAR" />
+    <result column="descri_en" property="descriEn" jdbcType="VARCHAR" />
+    <result column="more" property="more" jdbcType="VARCHAR" />
+    <result column="more_zh" property="moreZh" jdbcType="VARCHAR" />
+    <result column="more_en" property="moreEn" jdbcType="VARCHAR" />
+    <result column="img_html_url" property="imgHtmlUrl" jdbcType="VARCHAR" />
+    <result column="img_target" property="imgTarget" jdbcType="VARCHAR" />
+    <result column="title_html_url" property="titleHtmlUrl" jdbcType="VARCHAR" />
+    <result column="title_target" property="titleTarget" jdbcType="VARCHAR" />
+    <result column="descri_html_url" property="descriHtmlUrl" jdbcType="VARCHAR" />
+    <result column="descri_target" property="descriTarget" jdbcType="VARCHAR" />
+    <result column="more_html_url" property="moreHtmlUrl" jdbcType="VARCHAR" />
+    <result column="more_target" property="moreTarget" jdbcType="VARCHAR" />
+    <result column="descri_split_txt" property="descriSplitTxt" jdbcType="VARCHAR" />
+    <result column="before_split_txt" property="beforeSplitTxt" jdbcType="VARCHAR" />
+    <result column="after_split_txt" property="afterSplitTxt" jdbcType="VARCHAR" />
+    <result column="order_num" property="orderNum" jdbcType="INTEGER" />
+    <result column="level_num" property="levelNum" jdbcType="INTEGER" />
+  </resultMap>
+
+  <resultMap id="BaseResultMapEn" type="com.fc.test.model.auto.CmsHtmlModule" >
+    <result column="id" property="id" jdbcType="VARCHAR" />
+    <result column="cms_html_link_code" property="cmsHtmlLinkCode" jdbcType="VARCHAR" />
+    <result column="code" property="code" jdbcType="VARCHAR" />
+    <result column="parent_code" property="parentCode" jdbcType="VARCHAR" />
+    <result column="cms_file_code" property="cmsFileCode" jdbcType="VARCHAR" />
+    <result column="title_en" property="title" jdbcType="VARCHAR" />
+    <result column="title_zh" property="titleZh" jdbcType="VARCHAR" />
+    <result column="title" property="titleEn" jdbcType="VARCHAR" />
+    <result column="descri_en" property="descri" jdbcType="VARCHAR" />
+    <result column="descri_zh" property="descriZh" jdbcType="VARCHAR" />
+    <result column="descri" property="descriEn" jdbcType="VARCHAR" />
+    <result column="more_en" property="more" jdbcType="VARCHAR" />
+    <result column="more_zh" property="moreZh" jdbcType="VARCHAR" />
+    <result column="more" property="moreEn" jdbcType="VARCHAR" />
+    <result column="img_html_url" property="imgHtmlUrl" jdbcType="VARCHAR" />
+    <result column="img_target" property="imgTarget" jdbcType="VARCHAR" />
+    <result column="title_html_url" property="titleHtmlUrl" jdbcType="VARCHAR" />
+    <result column="title_target" property="titleTarget" jdbcType="VARCHAR" />
+    <result column="descri_html_url" property="descriHtmlUrl" jdbcType="VARCHAR" />
+    <result column="descri_target" property="descriTarget" jdbcType="VARCHAR" />
+    <result column="more_html_url" property="moreHtmlUrl" jdbcType="VARCHAR" />
+    <result column="more_target" property="moreTarget" jdbcType="VARCHAR" />
+    <result column="descri_split_txt" property="descriSplitTxt" jdbcType="VARCHAR" />
+    <result column="before_split_txt" property="beforeSplitTxt" jdbcType="VARCHAR" />
+    <result column="after_split_txt" property="afterSplitTxt" jdbcType="VARCHAR" />
+    <result column="order_num" property="orderNum" jdbcType="INTEGER" />
+    <result column="level_num" property="levelNum" jdbcType="INTEGER" />
+  </resultMap>
+
+  <resultMap id="BaseResultMapZh" type="com.fc.test.model.auto.CmsHtmlModule" >
+    <result column="id" property="id" jdbcType="VARCHAR" />
+    <result column="cms_html_link_code" property="cmsHtmlLinkCode" jdbcType="VARCHAR" />
+    <result column="code" property="code" jdbcType="VARCHAR" />
+    <result column="parent_code" property="parentCode" jdbcType="VARCHAR" />
+    <result column="cms_file_code" property="cmsFileCode" jdbcType="VARCHAR" />
+    <result column="title_zh" property="title" jdbcType="VARCHAR" />
+    <result column="title" property="titleZh" jdbcType="VARCHAR" />
+    <result column="title_en" property="titleEn" jdbcType="VARCHAR" />
+    <result column="descri_zh" property="descri" jdbcType="VARCHAR" />
+    <result column="descri" property="descriZh" jdbcType="VARCHAR" />
+    <result column="descri_en" property="descriEn" jdbcType="VARCHAR" />
+    <result column="more_zh" property="more" jdbcType="VARCHAR" />
+    <result column="more" property="moreZh" jdbcType="VARCHAR" />
+    <result column="more_en" property="moreEn" jdbcType="VARCHAR" />
+    <result column="img_html_url" property="imgHtmlUrl" jdbcType="VARCHAR" />
+    <result column="img_target" property="imgTarget" jdbcType="VARCHAR" />
+    <result column="title_html_url" property="titleHtmlUrl" jdbcType="VARCHAR" />
+    <result column="title_target" property="titleTarget" jdbcType="VARCHAR" />
+    <result column="descri_html_url" property="descriHtmlUrl" jdbcType="VARCHAR" />
+    <result column="descri_target" property="descriTarget" jdbcType="VARCHAR" />
+    <result column="more_html_url" property="moreHtmlUrl" jdbcType="VARCHAR" />
+    <result column="more_target" property="moreTarget" jdbcType="VARCHAR" />
+    <result column="descri_split_txt" property="descriSplitTxt" jdbcType="VARCHAR" />
+    <result column="before_split_txt" property="beforeSplitTxt" jdbcType="VARCHAR" />
+    <result column="after_split_txt" property="afterSplitTxt" jdbcType="VARCHAR" />
+    <result column="order_num" property="orderNum" jdbcType="INTEGER" />
+    <result column="level_num" property="levelNum" jdbcType="INTEGER" />
+  </resultMap>
+
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+<sql id="Base_Column_List" >
+	id,cms_html_link_code,code,parent_code,cms_file_code,title,title_zh,title_en,descri,descri_zh,descri_en,more,more_zh,more_en,img_html_url,img_target,title_html_url,title_target,descri_html_url,descri_target,more_html_url,more_target,descri_split_txt,before_split_txt,after_split_txt,order_num,level_num
+</sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.fc.test.model.auto.CmsHtmlModuleExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from cms_html_module
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExampleZh" resultMap="BaseResultMapZh" parameterType="com.fc.test.model.auto.CmsHtmlModuleExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from cms_html_module
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExampleEn" resultMap="BaseResultMapEn" parameterType="com.fc.test.model.auto.CmsHtmlModuleExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from cms_html_module
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="String" >
+    select 
+    <include refid="Base_Column_List" />
+    from cms_html_module
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+
+  <delete id="deleteByPrimaryKey" parameterType="String" >
+    delete from cms_html_module
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+
+  <delete id="deleteByExample" parameterType="com.fc.test.model.auto.CmsHtmlModuleExample" >
+    delete from cms_html_module
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  
+  <insert id="insert" parameterType="com.fc.test.model.auto.CmsHtmlModule" >
+    insert into cms_html_module (
+      	  	       id,
+       	  	       cms_html_link_code,
+       	  	       code,
+       	  	       parent_code,
+       	  	       cms_file_code,
+       	  	       title,
+       	  	       title_zh,
+       	  	       title_en,
+       	  	       descri,
+       	  	       descri_zh,
+       	  	       descri_en,
+       	  	       more,
+       	  	       more_zh,
+       	  	       more_en,
+       	  	       img_html_url,
+       	  	       img_target,
+       	  	       title_html_url,
+       	  	       title_target,
+       	  	       descri_html_url,
+       	  	       descri_target,
+       	  	       more_html_url,
+       	  	       more_target,
+       	  	       descri_split_txt,
+       	  	       before_split_txt,
+       	  	       after_split_txt,
+       	  	       order_num,
+       	  	    	  level_num
+       	    )
+    values (
+	  	  	      	#{id,jdbcType=VARCHAR},
+       	  	      	#{cmsHtmlLinkCode,jdbcType=VARCHAR},
+       	  	      	#{code,jdbcType=VARCHAR},
+       	  	      	#{parentCode,jdbcType=VARCHAR},
+       	  	      	#{cmsFileCode,jdbcType=VARCHAR},
+       	  	      	#{title,jdbcType=VARCHAR},
+       	  	      	#{titleZh,jdbcType=VARCHAR},
+       	  	      	#{titleEn,jdbcType=VARCHAR},
+       	  	      	#{descri,jdbcType=VARCHAR},
+       	  	      	#{descriZh,jdbcType=VARCHAR},
+       	  	      	#{descriEn,jdbcType=VARCHAR},
+       	  	      	#{more,jdbcType=VARCHAR},
+       	  	      	#{moreZh,jdbcType=VARCHAR},
+       	  	      	#{moreEn,jdbcType=VARCHAR},
+       	  	      	#{imgHtmlUrl,jdbcType=VARCHAR},
+       	  	      	#{imgTarget,jdbcType=VARCHAR},
+       	  	      	#{titleHtmlUrl,jdbcType=VARCHAR},
+       	  	      	#{titleTarget,jdbcType=VARCHAR},
+       	  	      	#{descriHtmlUrl,jdbcType=VARCHAR},
+       	  	      	#{descriTarget,jdbcType=VARCHAR},
+       	  	      	#{moreHtmlUrl,jdbcType=VARCHAR},
+       	  	      	#{moreTarget,jdbcType=VARCHAR},
+       	  	      	#{descriSplitTxt,jdbcType=VARCHAR},
+       	  	      	#{beforeSplitTxt,jdbcType=VARCHAR},
+       	  	      	#{afterSplitTxt,jdbcType=VARCHAR},
+       	  	      	#{orderNum,jdbcType=INTEGER},
+       	  	    	  #{levelNum,jdbcType=INTEGER}
+       	    )
+  </insert>
+  
+  <insert id="insertSelective" parameterType="com.fc.test.model.auto.CmsHtmlModule" >
+    insert into cms_html_module
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+          
+      <if test="id != null" >
+        id,
+      </if>
+      
+         
+      <if test="cmsHtmlLinkCode != null" >
+        cms_html_link_code,
+      </if>
+      
+         
+      <if test="code != null" >
+        code,
+      </if>
+      
+         
+      <if test="parentCode != null" >
+        parent_code,
+      </if>
+      
+         
+      <if test="cmsFileCode != null" >
+        cms_file_code,
+      </if>
+      
+         
+      <if test="title != null" >
+        title,
+      </if>
+      
+         
+      <if test="titleZh != null" >
+        title_zh,
+      </if>
+      
+         
+      <if test="titleEn != null" >
+        title_en,
+      </if>
+      
+         
+      <if test="descri != null" >
+        descri,
+      </if>
+      
+         
+      <if test="descriZh != null" >
+        descri_zh,
+      </if>
+      
+         
+      <if test="descriEn != null" >
+        descri_en,
+      </if>
+      
+         
+      <if test="more != null" >
+        more,
+      </if>
+      
+         
+      <if test="moreZh != null" >
+        more_zh,
+      </if>
+      
+         
+      <if test="moreEn != null" >
+        more_en,
+      </if>
+      
+         
+      <if test="imgHtmlUrl != null" >
+        img_html_url,
+      </if>
+      
+         
+      <if test="imgTarget != null" >
+        img_target,
+      </if>
+      
+         
+      <if test="titleHtmlUrl != null" >
+        title_html_url,
+      </if>
+      
+         
+      <if test="titleTarget != null" >
+        title_target,
+      </if>
+      
+         
+      <if test="descriHtmlUrl != null" >
+        descri_html_url,
+      </if>
+      
+         
+      <if test="descriTarget != null" >
+        descri_target,
+      </if>
+      
+         
+      <if test="moreHtmlUrl != null" >
+        more_html_url,
+      </if>
+      
+         
+      <if test="moreTarget != null" >
+        more_target,
+      </if>
+      
+         
+      <if test="descriSplitTxt != null" >
+        descri_split_txt,
+      </if>
+      
+         
+      <if test="beforeSplitTxt != null" >
+        before_split_txt,
+      </if>
+      
+         
+      <if test="afterSplitTxt != null" >
+        after_split_txt,
+      </if>
+      
+         
+      <if test="orderNum != null" >
+        order_num,
+      </if>
+      
+         
+      <if test="levelNum != null" >
+        level_num,
+      </if>
+      
+         </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+          <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
+          <if test="cmsHtmlLinkCode != null" >
+        #{cmsHtmlLinkCode,jdbcType=VARCHAR},
+      </if>
+          <if test="code != null" >
+        #{code,jdbcType=VARCHAR},
+      </if>
+          <if test="parentCode != null" >
+        #{parentCode,jdbcType=VARCHAR},
+      </if>
+          <if test="cmsFileCode != null" >
+        #{cmsFileCode,jdbcType=VARCHAR},
+      </if>
+          <if test="title != null" >
+        #{title,jdbcType=VARCHAR},
+      </if>
+          <if test="titleZh != null" >
+        #{titleZh,jdbcType=VARCHAR},
+      </if>
+          <if test="titleEn != null" >
+        #{titleEn,jdbcType=VARCHAR},
+      </if>
+          <if test="descri != null" >
+        #{descri,jdbcType=VARCHAR},
+      </if>
+          <if test="descriZh != null" >
+        #{descriZh,jdbcType=VARCHAR},
+      </if>
+          <if test="descriEn != null" >
+        #{descriEn,jdbcType=VARCHAR},
+      </if>
+          <if test="more != null" >
+        #{more,jdbcType=VARCHAR},
+      </if>
+          <if test="moreZh != null" >
+        #{moreZh,jdbcType=VARCHAR},
+      </if>
+          <if test="moreEn != null" >
+        #{moreEn,jdbcType=VARCHAR},
+      </if>
+          <if test="imgHtmlUrl != null" >
+        #{imgHtmlUrl,jdbcType=VARCHAR},
+      </if>
+          <if test="imgTarget != null" >
+        #{imgTarget,jdbcType=VARCHAR},
+      </if>
+          <if test="titleHtmlUrl != null" >
+        #{titleHtmlUrl,jdbcType=VARCHAR},
+      </if>
+          <if test="titleTarget != null" >
+        #{titleTarget,jdbcType=VARCHAR},
+      </if>
+          <if test="descriHtmlUrl != null" >
+        #{descriHtmlUrl,jdbcType=VARCHAR},
+      </if>
+          <if test="descriTarget != null" >
+        #{descriTarget,jdbcType=VARCHAR},
+      </if>
+          <if test="moreHtmlUrl != null" >
+        #{moreHtmlUrl,jdbcType=VARCHAR},
+      </if>
+          <if test="moreTarget != null" >
+        #{moreTarget,jdbcType=VARCHAR},
+      </if>
+          <if test="descriSplitTxt != null" >
+        #{descriSplitTxt,jdbcType=VARCHAR},
+      </if>
+          <if test="beforeSplitTxt != null" >
+        #{beforeSplitTxt,jdbcType=VARCHAR},
+      </if>
+          <if test="afterSplitTxt != null" >
+        #{afterSplitTxt,jdbcType=VARCHAR},
+      </if>
+          <if test="orderNum != null" >
+        #{orderNum,jdbcType=INTEGER},
+      </if>
+          <if test="levelNum != null" >
+        #{levelNum,jdbcType=INTEGER},
+      </if>
+        </trim>
+  </insert>
+  
+  <select id="countByExample" parameterType="com.fc.test.model.auto.CmsHtmlModuleExample" resultType="String" >
+    select count(*) from cms_html_module
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  
+  <update id="updateByExampleSelective" parameterType="map" >
+    update cms_html_module
+    <set >
+          <if test="record.id != null" >
+        id = #{record.id,jdbcType=VARCHAR},
+      </if>
+          <if test="record.cmsHtmlLinkCode != null" >
+        cms_html_link_code = #{record.cmsHtmlLinkCode,jdbcType=VARCHAR},
+      </if>
+          <if test="record.code != null" >
+        code = #{record.code,jdbcType=VARCHAR},
+      </if>
+          <if test="record.parentCode != null" >
+        parent_code = #{record.parentCode,jdbcType=VARCHAR},
+      </if>
+          <if test="record.cmsFileCode != null" >
+        cms_file_code = #{record.cmsFileCode,jdbcType=VARCHAR},
+      </if>
+          <if test="record.title != null" >
+        title = #{record.title,jdbcType=VARCHAR},
+      </if>
+          <if test="record.titleZh != null" >
+        title_zh = #{record.titleZh,jdbcType=VARCHAR},
+      </if>
+          <if test="record.titleEn != null" >
+        title_en = #{record.titleEn,jdbcType=VARCHAR},
+      </if>
+          <if test="record.descri != null" >
+        descri = #{record.descri,jdbcType=VARCHAR},
+      </if>
+          <if test="record.descriZh != null" >
+        descri_zh = #{record.descriZh,jdbcType=VARCHAR},
+      </if>
+          <if test="record.descriEn != null" >
+        descri_en = #{record.descriEn,jdbcType=VARCHAR},
+      </if>
+          <if test="record.more != null" >
+        more = #{record.more,jdbcType=VARCHAR},
+      </if>
+          <if test="record.moreZh != null" >
+        more_zh = #{record.moreZh,jdbcType=VARCHAR},
+      </if>
+          <if test="record.moreEn != null" >
+        more_en = #{record.moreEn,jdbcType=VARCHAR},
+      </if>
+          <if test="record.imgHtmlUrl != null" >
+        img_html_url = #{record.imgHtmlUrl,jdbcType=VARCHAR},
+      </if>
+          <if test="record.imgTarget != null" >
+        img_target = #{record.imgTarget,jdbcType=VARCHAR},
+      </if>
+          <if test="record.titleHtmlUrl != null" >
+        title_html_url = #{record.titleHtmlUrl,jdbcType=VARCHAR},
+      </if>
+          <if test="record.titleTarget != null" >
+        title_target = #{record.titleTarget,jdbcType=VARCHAR},
+      </if>
+          <if test="record.descriHtmlUrl != null" >
+        descri_html_url = #{record.descriHtmlUrl,jdbcType=VARCHAR},
+      </if>
+          <if test="record.descriTarget != null" >
+        descri_target = #{record.descriTarget,jdbcType=VARCHAR},
+      </if>
+          <if test="record.moreHtmlUrl != null" >
+        more_html_url = #{record.moreHtmlUrl,jdbcType=VARCHAR},
+      </if>
+          <if test="record.moreTarget != null" >
+        more_target = #{record.moreTarget,jdbcType=VARCHAR},
+      </if>
+          <if test="record.descriSplitTxt != null" >
+        descri_split_txt = #{record.descriSplitTxt,jdbcType=VARCHAR},
+      </if>
+          <if test="record.beforeSplitTxt != null" >
+        before_split_txt = #{record.beforeSplitTxt,jdbcType=VARCHAR},
+      </if>
+          <if test="record.afterSplitTxt != null" >
+        after_split_txt = #{record.afterSplitTxt,jdbcType=VARCHAR},
+      </if>
+          <if test="record.orderNum != null" >
+        order_num = #{record.orderNum,jdbcType=INTEGER},
+      </if>
+          <if test="record.levelNum != null" >
+        level_num = #{record.levelNum,jdbcType=INTEGER},
+      </if>
+         
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  
+  
+  <update id="updateByExample" parameterType="map" >
+    update cms_html_module
+    set
+            	     	 id = #{record.id,jdbcType=VARCHAR},
+    	       
+        	     	 cms_html_link_code = #{record.cmsHtmlLinkCode,jdbcType=VARCHAR},
+    	       
+        	     	 code = #{record.code,jdbcType=VARCHAR},
+    	       
+        	     	 parent_code = #{record.parentCode,jdbcType=VARCHAR},
+    	       
+        	     	 cms_file_code = #{record.cmsFileCode,jdbcType=VARCHAR},
+    	       
+        	     	 title = #{record.title,jdbcType=VARCHAR},
+    	       
+        	     	 title_zh = #{record.titleZh,jdbcType=VARCHAR},
+    	       
+        	     	 title_en = #{record.titleEn,jdbcType=VARCHAR},
+    	       
+        	     	 descri = #{record.descri,jdbcType=VARCHAR},
+    	       
+        	     	 descri_zh = #{record.descriZh,jdbcType=VARCHAR},
+    	       
+        	     	 descri_en = #{record.descriEn,jdbcType=VARCHAR},
+    	       
+        	     	 more = #{record.more,jdbcType=VARCHAR},
+    	       
+        	     	 more_zh = #{record.moreZh,jdbcType=VARCHAR},
+    	       
+        	     	 more_en = #{record.moreEn,jdbcType=VARCHAR},
+    	       
+        	     	 img_html_url = #{record.imgHtmlUrl,jdbcType=VARCHAR},
+    	       
+        	     	 img_target = #{record.imgTarget,jdbcType=VARCHAR},
+    	       
+        	     	 title_html_url = #{record.titleHtmlUrl,jdbcType=VARCHAR},
+    	       
+        	     	 title_target = #{record.titleTarget,jdbcType=VARCHAR},
+    	       
+        	     	 descri_html_url = #{record.descriHtmlUrl,jdbcType=VARCHAR},
+    	       
+        	     	 descri_target = #{record.descriTarget,jdbcType=VARCHAR},
+    	       
+        	     	 more_html_url = #{record.moreHtmlUrl,jdbcType=VARCHAR},
+    	       
+        	     	 more_target = #{record.moreTarget,jdbcType=VARCHAR},
+    	       
+        	     	 descri_split_txt = #{record.descriSplitTxt,jdbcType=VARCHAR},
+    	       
+        	     	 before_split_txt = #{record.beforeSplitTxt,jdbcType=VARCHAR},
+    	       
+        	     	 after_split_txt = #{record.afterSplitTxt,jdbcType=VARCHAR},
+    	       
+        	     	 order_num = #{record.orderNum,jdbcType=INTEGER},
+    	       
+        	     	 level_num = #{record.levelNum,jdbcType=INTEGER},
+    	       
+        <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  
+    <update id="updateByPrimaryKeySelective" parameterType="com.fc.test.model.auto.CmsHtmlModule" >
+    update cms_html_module
+    <set >
+                          <if test="cmsHtmlLinkCode != null" >
+        cms_html_link_code = #{cmsHtmlLinkCode,jdbcType=VARCHAR},
+      </if>
+                      <if test="code != null" >
+        code = #{code,jdbcType=VARCHAR},
+      </if>
+                      <if test="parentCode != null" >
+        parent_code = #{parentCode,jdbcType=VARCHAR},
+      </if>
+                      <if test="cmsFileCode != null" >
+        cms_file_code = #{cmsFileCode,jdbcType=VARCHAR},
+      </if>
+                      <if test="title != null" >
+        title = #{title,jdbcType=VARCHAR},
+      </if>
+                      <if test="titleZh != null" >
+        title_zh = #{titleZh,jdbcType=VARCHAR},
+      </if>
+                      <if test="titleEn != null" >
+        title_en = #{titleEn,jdbcType=VARCHAR},
+      </if>
+                      <if test="descri != null" >
+        descri = #{descri,jdbcType=VARCHAR},
+      </if>
+                      <if test="descriZh != null" >
+        descri_zh = #{descriZh,jdbcType=VARCHAR},
+      </if>
+                      <if test="descriEn != null" >
+        descri_en = #{descriEn,jdbcType=VARCHAR},
+      </if>
+                      <if test="more != null" >
+        more = #{more,jdbcType=VARCHAR},
+      </if>
+                      <if test="moreZh != null" >
+        more_zh = #{moreZh,jdbcType=VARCHAR},
+      </if>
+                      <if test="moreEn != null" >
+        more_en = #{moreEn,jdbcType=VARCHAR},
+      </if>
+                      <if test="imgHtmlUrl != null" >
+        img_html_url = #{imgHtmlUrl,jdbcType=VARCHAR},
+      </if>
+                      <if test="imgTarget != null" >
+        img_target = #{imgTarget,jdbcType=VARCHAR},
+      </if>
+                      <if test="titleHtmlUrl != null" >
+        title_html_url = #{titleHtmlUrl,jdbcType=VARCHAR},
+      </if>
+                      <if test="titleTarget != null" >
+        title_target = #{titleTarget,jdbcType=VARCHAR},
+      </if>
+                      <if test="descriHtmlUrl != null" >
+        descri_html_url = #{descriHtmlUrl,jdbcType=VARCHAR},
+      </if>
+                      <if test="descriTarget != null" >
+        descri_target = #{descriTarget,jdbcType=VARCHAR},
+      </if>
+                      <if test="moreHtmlUrl != null" >
+        more_html_url = #{moreHtmlUrl,jdbcType=VARCHAR},
+      </if>
+                      <if test="moreTarget != null" >
+        more_target = #{moreTarget,jdbcType=VARCHAR},
+      </if>
+                      <if test="descriSplitTxt != null" >
+        descri_split_txt = #{descriSplitTxt,jdbcType=VARCHAR},
+      </if>
+                      <if test="beforeSplitTxt != null" >
+        before_split_txt = #{beforeSplitTxt,jdbcType=VARCHAR},
+      </if>
+                      <if test="afterSplitTxt != null" >
+        after_split_txt = #{afterSplitTxt,jdbcType=VARCHAR},
+      </if>
+                      <if test="orderNum != null" >
+        order_num = #{orderNum,jdbcType=INTEGER},
+      </if>
+                      <if test="levelNum != null" >
+        level_num = #{levelNum,jdbcType=INTEGER},
+      </if>
+              </set>
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+
+  <update id="updateByPrimaryKey" parameterType="com.fc.test.model.auto.CmsHtmlModule" >
+    update cms_html_module
+    set 
+             	        	    	 			cms_html_link_code = #{cmsHtmlLinkCode,jdbcType=VARCHAR}
+		     	        	    	 			code = #{code,jdbcType=VARCHAR}
+		     	        	    	 			parent_code = #{parentCode,jdbcType=VARCHAR}
+		     	        	    	 			cms_file_code = #{cmsFileCode,jdbcType=VARCHAR}
+		     	        	    	 			title = #{title,jdbcType=VARCHAR}
+		     	        	    	 			title_zh = #{titleZh,jdbcType=VARCHAR}
+		     	        	    	 			title_en = #{titleEn,jdbcType=VARCHAR}
+		     	        	    	 			descri = #{descri,jdbcType=VARCHAR}
+		     	        	    	 			descri_zh = #{descriZh,jdbcType=VARCHAR}
+		     	        	    	 			descri_en = #{descriEn,jdbcType=VARCHAR}
+		     	        	    	 			more = #{more,jdbcType=VARCHAR}
+		     	        	    	 			more_zh = #{moreZh,jdbcType=VARCHAR}
+		     	        	    	 			more_en = #{moreEn,jdbcType=VARCHAR}
+		     	        	    	 			img_html_url = #{imgHtmlUrl,jdbcType=VARCHAR}
+		     	        	    	 			img_target = #{imgTarget,jdbcType=VARCHAR}
+		     	        	    	 			title_html_url = #{titleHtmlUrl,jdbcType=VARCHAR}
+		     	        	    	 			title_target = #{titleTarget,jdbcType=VARCHAR}
+		     	        	    	 			descri_html_url = #{descriHtmlUrl,jdbcType=VARCHAR}
+		     	        	    	 			descri_target = #{descriTarget,jdbcType=VARCHAR}
+		     	        	    	 			more_html_url = #{moreHtmlUrl,jdbcType=VARCHAR}
+		     	        	    	 			more_target = #{moreTarget,jdbcType=VARCHAR}
+		     	        	    	 			descri_split_txt = #{descriSplitTxt,jdbcType=VARCHAR}
+		     	        	    	 			before_split_txt = #{beforeSplitTxt,jdbcType=VARCHAR}
+		     	        	    	 			after_split_txt = #{afterSplitTxt,jdbcType=VARCHAR}
+		     	        	    	 			order_num = #{orderNum,jdbcType=INTEGER}
+		     	        	    	 			level_num = #{levelNum,jdbcType=INTEGER}
+		     	        where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <cache/>
+   </mapper>

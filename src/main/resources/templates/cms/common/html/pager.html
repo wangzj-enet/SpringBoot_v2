@@ -1,0 +1,24 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<div  th:fragment="pager(page,name,title)">
+
+    <div class="page" th:if="${title} == null">
+
+        <a th:href="${name}"><</a>
+
+        <a th:href="|${name}?pageNum=${i}|" th:class="((${i} == ${page.pageNum})? 'active' : '')"  th:text="${i}" th:each="i, stat:${#numbers.sequence(1, page.pages)}">1</a>
+
+        <a th:href="${name}">></a>
+    </div>
+
+    <div class="page" th:if="${title} != null">
+
+        <a th:href="|${name}?title=${title}|"><</a>
+
+        <a th:href="|${name}?title=${title}&pageNum=${i}|" th:class="((${i} == ${page.pageNum})? 'active' : '')"  th:text="${i}" th:each="i, stat:${#numbers.sequence(1, page.pages)}">1</a>
+
+        <a th:href="|${name}?title=${title}$|">></a>
+    </div>
+
+
+
+</div>

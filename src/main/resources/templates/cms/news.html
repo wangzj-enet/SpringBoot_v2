@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<!-- awwwb.com -->
+<!-- Added by HTTrack -->
+<meta http-equiv="content-type" content="text/html;charset=utf-8"><!-- /Added by HTTrack -->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#bf3030">
+
+    <title>news</title>
+    <meta name="keywords" content="News,News,Zhengzhou Champion Sports Goods Co.,Ltd.">
+    <meta name="description" content="News,News,Zhengzhou Champion Sports Goods Co.,Ltd.">
+
+    <link rel="stylesheet" th:href="@{static/cms/httplocalhost/css/bootstrap.css}">
+    <link rel="stylesheet" th:href="@{static/cms/httplocalhost/css/iconfont.css}">
+    <link rel="stylesheet" th:href="@{static/cms/httplocalhost/css/jquery.carousel.css}">
+    <link rel="stylesheet" th:href="@{static/cms/httplocalhost/css/jquery.fancybox.css}">
+    <link rel="stylesheet" th:href="@{static/cms/httplocalhost/css/jquery.imagezoom.css}">
+
+    <link rel="stylesheet" th:href="@{static/cms/httplocalhost/css/style.css}">
+    <link rel="stylesheet" th:href="@{static/cms/httplocalhost/css/style_v2.css}">
+</head>
+<body>
+
+<!-- header 通用-->
+<div th:insert="cms/common/html/header :: header(${nav})"></div>
+<!-- 结束header通用 -->
+
+
+<div th:insert="cms/common/html/banner_nav1 :: banner_nav1(${homeMap['banner_nav']})"></div>
+
+
+<div class="news-list">
+    <div class="container">
+        <ul class="row">
+            <li class="col-md-4 col-sm-6 col-xs-12" th:each="news : ${page.list}">
+                <div class="list">
+                    <a th:href="${news.titleHtmlUrl}" class="img-box">
+                        <img class="lazy"
+                             th:data-src="${news.cmsFileCode}"
+                             th:alt="${news.title}">
+                    </a>
+                    <div class="txt">
+                        <div class="date">
+                            <p class="month" th:text="${#strings.arraySplit(news.descri,'|')[0]}">04-01</p>
+                            <span class="year" th:text="${#strings.arraySplit(news.descri,'|')[1]}">2019</span>
+                        </div>
+                        <div class="title">
+                            <h2><a th:href="${news.titleHtmlUrl}" th:text="${news.title}">125th Canton Fair！</a></h2>
+                            <p><a th:href="${news.titleHtmlUrl}" th:utext="${news.more}">SKYJADE will attend 125th Canton Fair</a></p>
+                            <a class="more"  th:href="${news.titleHtmlUrl}"></a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+        </ul>
+        <div th:insert="cms/common/html/pager::pager(${page},'news.html',${title})"></div>
+    </div>
+</div>
+<div th:insert="cms/common/html/sliderbar :: sliderbar(${sliderbar})"></div>
+
+<div th:insert="cms/common/html/footer :: footer(${footer},${footer_1},${footer_2},${footer_4})"></div>
+<div th:insert="cms/common/html/section :: section(${homeMap['section']},${section})"></div>
+
+<div class="loadjs">
+    <script th:src="@{static/cms/httplocalhost/js/jquery-2.1.4.min.js}"></script>
+    <script th:src="@{static/cms/httplocalhost/js/jquery.carousel.min.js}"></script>
+    <script th:src="@{static/cms/httplocalhost/js/jquery.fancybox.min.js}"></script>
+    <script th:src="@{static/cms/httplocalhost/js/jquery.lazyload.min.js}"></script>
+    <script th:src="@{static/cms/httplocalhost/js/jquery.imagezoom.min.js}"></script>
+
+    <script th:src="@{static/cms/httplocalhost/js/bootstrap.js}"></script>
+    <script th:src="@{static/cms/httplocalhost/js/jquery.countto.min.js}"></script>
+    <script th:src="@{static/cms/httplocalhost/js/main.js}"></script>
+</div>
+
+<div class="hidden">
+    <script type="text/javascript">
+        var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+        document.write(unescape("%3Cspan id='cnzz_stat_icon_1262931944-'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s13.cnzz.com/z_stat.php%3Fid%3D1262931944%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+</div>
+
+
+</body>
+
+<!-- awwwb.com -->
+<!-- Added by HTTrack -->
+<meta http-equiv="content-type" content="text/html;charset=utf-8"><!-- /Added by HTTrack -->
+</html>

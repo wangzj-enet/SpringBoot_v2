@@ -1,0 +1,22 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<div  th:fragment="why(why,whyTtemList)">
+    <div class="why">
+        <div class="container">
+            <div class="txt">
+                <h2 th:text="${why.title}">WHY CHOOSE US</h2>
+                <p th:text="${why.descri}">SKYJADE, as a manufacturer with passion for artificial grass, using only high performance quality yarns
+                    in a variety of shapes for its artificial grass products in designed for perfect performance.</p>
+            </div>
+            <ul class="row" id="choose">
+                <li class="choose" th:each="whyTtem : ${whyTtemList}">
+                    <h3 th:text="${whyTtem.title}">QUALITY ASSURANCE</h3>
+                    <div>
+                        <p th:text="${item}" th:each="item : ${#strings.listSplit(whyTtem.descri,'|')}">8-10 years warranty</p>
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+	
+</div>

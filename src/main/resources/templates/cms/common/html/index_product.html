@@ -1,0 +1,23 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<div  th:fragment="index_product(product,productItemList)">
+    <div class="index-product">
+        <div class="container">
+            <div class="txt">
+                <h2 th:text="${product.title}"></h2>
+                <p th:text="${product.descri}"></p>
+            </div>
+            <div class="list">
+                <div class="row">
+                    <div th:class="${productItem.beforeSplitTxt}" th:each="productItem : ${productItemList}">
+                        <a class="img-box" th:href="${productItem.imgHtmlUrl}" th:alt="test">
+                            <img th:src="${productItem.cmsFileCode}"/>
+                        </a>
+                        <p><a th:href="${productItem.titleHtmlUrl}" th:text="${productItem.title}"></a></p>
+                    </div>
+                </div>
+            </div>
+            <a class="more" th:href="${product.moreHtmlUrl}" th:text="${product.more}"></a>
+        </div>
+    </div>
+	
+</div>

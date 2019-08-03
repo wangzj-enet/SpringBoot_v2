@@ -1,0 +1,136 @@
+.header .nav {
+	display: none;
+}
+
+.header .navpc {
+	display: block;
+	float: right;
+}
+
+.header .navpc .find {
+	float: right;
+	width: 24px;
+	height: 24px;
+	margin-top: 30px;
+	margin-left: 25px;
+	cursor: pointer;
+	background: url(../img/index-sprite.png) no-repeat 0 0;
+}
+
+@media (max-width:767px) {
+	.header .nav {
+		display: block;
+	}
+
+	.header .navpc {
+		display: none;
+	}
+
+}
+
+@media (max-width:1199px) {
+	.navpc .level > li > a {
+		font-size: 14px !important;
+		padding: 0 14px !important;
+	}
+
+}
+
+@media (max-width:991px) {
+	.navpc .level > li > a {
+		font-size: 12px !important;
+		padding: 0 8px !important;
+	}
+
+	.header .navpc .find {
+		display: none;
+	}
+
+}
+
+.navpc .level {
+	float: left;
+	z-index: 10;
+}
+
+.navpc .level > li {
+	float: left;
+	position: relative;
+}
+
+.navpc .level > li > a {
+	display: block;
+	font-size: 16px;
+	padding: 0 20px;
+	line-height: 80px;
+	color: #fff;
+}
+
+.navpc .level > li:hover > a, .navpc .level > li.navpcon > a {
+	color: rgba(255, 255, 255, 0.8);
+	text-decoration: underline;
+}
+
+.navpc .level-2, .navpc .level-3 {
+	position: absolute;
+	display: none;
+}
+
+.navpc .level-2 {
+	width: 100%;
+	min-width: 180px;
+	line-height: 34px;
+	top: 100%;
+	left: 0;
+	background-color: rgba(0, 0, 0, 0.3);
+}
+
+.navpc .level-2 > li {
+	position: relative;
+}
+
+.navpc .level-2 li:first-child {
+	margin-top: 10px;
+}
+
+.navpc .level-2 li:last-child {
+	margin-bottom: 10px;
+}
+
+.navpc .level-2 a, .navpc .level-3 a {
+	color: #fff;
+	display: block;
+	padding: 0 20px;
+	border-bottom: none;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+.navpc .level-2 a:hover, .navpc .level-3 a:hover {
+	opacity: .8;
+}
+
+.navpc .level-3 {
+	width: 206px;
+	position: absolute;
+	top: 0;
+	left: 100%;
+	background-color: rgba(0, 0, 0, 0.35);
+}
+
+.navpc .level-3 > li:hover {
+	background-color: rgba(0, 0, 0, 0.4);
+}
+
+.out-header .navpc .level > li > a {
+	color: #333;
+}
+
+.out-header .navpc .find {
+	background: url(../img/index-sprite.png) no-repeat -40px 0px;
+}
+
+.icon-email:before {
+	content: "\e6a4";
+}

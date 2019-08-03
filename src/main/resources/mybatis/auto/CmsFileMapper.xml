@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.fc.test.mapper.auto.CmsFileMapper">
+  <resultMap id="BaseResultMap" type="com.fc.test.model.auto.CmsFile" >
+    <result column="id" property="id" jdbcType="VARCHAR" />
+    <result column="code" property="code" jdbcType="VARCHAR" />
+    <result column="file_name" property="fileName" jdbcType="VARCHAR" />
+    <result column="adress" property="adress" jdbcType="VARCHAR" />
+    <result column="oper_time" property="operTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+<sql id="Base_Column_List" >
+	id,code,file_name,adress,oper_time
+</sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.fc.test.model.auto.CmsFileExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from cms_file
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="String" >
+    select 
+    <include refid="Base_Column_List" />
+    from cms_file
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+
+  <delete id="deleteByPrimaryKey" parameterType="String" >
+    delete from cms_file
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+
+  <delete id="deleteByExample" parameterType="com.fc.test.model.auto.CmsFileExample" >
+    delete from cms_file
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  
+  <insert id="insert" parameterType="com.fc.test.model.auto.CmsFile" >
+    insert into cms_file (
+      	  	       id,
+       	  	       code,
+       	  	       file_name,
+       	  	       adress,
+       	  	    	  oper_time
+       	    )
+    values (
+	  	  	      	#{id,jdbcType=VARCHAR},
+       	  	      	#{code,jdbcType=VARCHAR},
+       	  	      	#{fileName,jdbcType=VARCHAR},
+       	  	      	#{adress,jdbcType=VARCHAR},
+       	  	    	  #{operTime,jdbcType=TIMESTAMP}
+       	    )
+  </insert>
+  
+  <insert id="insertSelective" parameterType="com.fc.test.model.auto.CmsFile" >
+    insert into cms_file
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+          
+      <if test="id != null" >
+        id,
+      </if>
+      
+         
+      <if test="code != null" >
+        code,
+      </if>
+      
+         
+      <if test="fileName != null" >
+        file_name,
+      </if>
+      
+         
+      <if test="adress != null" >
+        adress,
+      </if>
+      
+         
+      <if test="operTime != null" >
+        oper_time,
+      </if>
+      
+         </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+          <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
+          <if test="code != null" >
+        #{code,jdbcType=VARCHAR},
+      </if>
+          <if test="fileName != null" >
+        #{fileName,jdbcType=VARCHAR},
+      </if>
+          <if test="adress != null" >
+        #{adress,jdbcType=VARCHAR},
+      </if>
+          <if test="operTime != null" >
+        #{operTime,jdbcType=TIMESTAMP},
+      </if>
+        </trim>
+  </insert>
+  
+  <select id="countByExample" parameterType="com.fc.test.model.auto.CmsFileExample" resultType="String" >
+    select count(*) from cms_file
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  
+  <update id="updateByExampleSelective" parameterType="map" >
+    update cms_file
+    <set >
+          <if test="record.id != null" >
+        id = #{record.id,jdbcType=VARCHAR},
+      </if>
+          <if test="record.code != null" >
+        code = #{record.code,jdbcType=VARCHAR},
+      </if>
+          <if test="record.fileName != null" >
+        file_name = #{record.fileName,jdbcType=VARCHAR},
+      </if>
+          <if test="record.adress != null" >
+        adress = #{record.adress,jdbcType=VARCHAR},
+      </if>
+          <if test="record.operTime != null" >
+        oper_time = #{record.operTime,jdbcType=TIMESTAMP},
+      </if>
+         
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  
+  
+  <update id="updateByExample" parameterType="map" >
+    update cms_file
+    set
+            	     	 id = #{record.id,jdbcType=VARCHAR},
+    	       
+        	     	 code = #{record.code,jdbcType=VARCHAR},
+    	       
+        	     	 file_name = #{record.fileName,jdbcType=VARCHAR},
+    	       
+        	     	 adress = #{record.adress,jdbcType=VARCHAR},
+    	       
+        	     	 oper_time = #{record.operTime,jdbcType=TIMESTAMP},
+    	       
+        <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  
+    <update id="updateByPrimaryKeySelective" parameterType="com.fc.test.model.auto.CmsFile" >
+    update cms_file
+    <set >
+                          <if test="code != null" >
+        code = #{code,jdbcType=VARCHAR},
+      </if>
+                      <if test="fileName != null" >
+        file_name = #{fileName,jdbcType=VARCHAR},
+      </if>
+                      <if test="adress != null" >
+        adress = #{adress,jdbcType=VARCHAR},
+      </if>
+                      <if test="operTime != null" >
+        oper_time = #{operTime,jdbcType=TIMESTAMP},
+      </if>
+              </set>
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+
+  <update id="updateByPrimaryKey" parameterType="com.fc.test.model.auto.CmsFile" >
+    update cms_file
+    set 
+             	        	    	 			code = #{code,jdbcType=VARCHAR}
+		     	        	    	 			file_name = #{fileName,jdbcType=VARCHAR}
+		     	        	    	 			adress = #{adress,jdbcType=VARCHAR}
+		     	        	    	 			oper_time = #{operTime,jdbcType=TIMESTAMP}
+		     	        where id = #{id,jdbcType=VARCHAR}
+  </update>
+   </mapper>

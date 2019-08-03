@@ -1,0 +1,29 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<div  th:fragment="banner(nav_txt)">
+    <div id="banner" class="banner">
+
+        <div th:with="navTxtList = ${#strings.arraySplit(nav_txt.cmsFileCode,'|')}">
+            <div class="owl-carousel owl-theme" id="owl-index">
+                <div class="item" th:each="navTxt : ${navTxtList}">
+                    <a href="javascript:;" target="_self">
+                        <img class="lazyOwl img-responsive" th:src="${navTxt}" alt="${navTxt}">
+                    </a>
+                </div>
+                <!--<div class="item">
+                    <a href="javascript:;" target="_self">
+                        <img class="lazyOwl img-responsive"
+                             th:data-src="${navTxtList[1]}" alt="">
+                    </a>
+                </div>
+                <div class="item">
+                    <a href="javascript:;" target="_self">
+                        <img class="lazyOwl img-responsive"
+                             th:data-src="${navTxtList[2]}"  alt="">
+                    </a>
+                </div>-->
+            </div>
+
+        </div>
+    </div>
+	
+</div>

@@ -1,0 +1,113 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<div  th:fragment="header(nav)">
+	<div class="header">
+		<div class="container">
+			<div class="logo">
+				<a href="index.html">
+					<img th:src="@{static/cms/httplocalhost/img/logo.png}">
+				</a>
+			</div>
+			<div class="nav">
+				<ul class="list1" th:each="navItem : ${nav}">
+					<li class="item">
+						<a th:href="${navItem.titleHtmlUrl}"  th:text="${navItem.title}"></a>
+					</li>
+				</ul>
+				<div class="find"></div>
+				<button class="b-btn" id="btn">
+					<span class="btn-line"></span>
+				</button>
+			</div>
+
+			<div class="navpc">
+				<ul class="level" th:each="navItem : ${nav}">
+					<li>
+						<a th:href="${navItem.titleHtmlUrl}"  th:text="${navItem.title}"></a>
+					</li>
+				</ul>
+				<div class="find"></div>
+			</div>
+
+			<div class="search-box">
+				<div class="container">
+					<form action="product-detail.html" method="get">
+						<input type="text" placeholder="搜索" name="title">
+						<input type="submit" value="搜索">
+					</form>
+				</div>
+			</div>
+
+
+			<style type="text/css">
+				.header > .container {
+					position: relative;
+				}
+
+				.header > .container > .nav {
+					margin-right: 20px;
+				}
+
+				.header > .container > .navpc {
+					margin-right: 40px;
+				}
+
+				.lang-wrapper {
+					position: absolute;
+					right: 5px;
+					top: 50%;
+					margin-top: -12px;
+				}
+
+				.lang-wrapper > .dropdown-menu {
+					margin-top: 0;
+					border-top-left-radius: 0;
+					border-top-right-radius: 0;
+				}
+
+				.lang-wrapper > .dropdown-menu > li > a {
+					padding: 3px 22px 3px 38px;
+				}
+
+				.flag-item {
+					background-repeat: no-repeat;
+					background-position-y: 8px;
+					background-position-x: 15px;
+				}
+
+				.flag-en {
+					background-image: url(httplocalhost/img/en.gif);
+				}
+
+				.flag-zh {
+					background-image: url(httplocalhost/img/zh.gif);
+				}
+
+				@media (max-width: 480px) {
+					.lang-wrapper {
+						margin-top: -5px;
+					}
+
+					.lang-wrapper > .dropdown-menu {
+						left: auto;
+						right: 0;
+					}
+				}
+			</style>
+			<!--<div class="dropdown lang-wrapper">
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+				   aria-expanded="false">
+					<img th:src="@{static/cms/httplocalhost/img/zh.gif}" alt="zh">
+					<span class="caret"></span>
+				</a>
+				<ul class="dropdown-menu lang-dropdown" role="menu">
+					<li role="presentation" class="dropdown-link">
+						<a href="index.html" class="flag-item flag-en" tabindex="-1" role="menuitem" selected="'selected'">English</a>
+						<a href="http://zh.skyjades.com/" class="flag-item flag-zh" tabindex="-1" role="menuitem">简体中文</a>
+					</li>
+				</ul>
+			</div>-->
+
+		</div>
+	</div>
+	
+</div>
