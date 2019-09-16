@@ -1,7 +1,7 @@
 #线上数据库环境
 spring :
   datasource :
-      driverClassName : com.mysql.jdbc.Driver
+      driverClassName : com.mysql.cj.jdbc.Driver
       url : jdbc:mysql://120.27.71.205:3306/springbootv2?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false
       username : root
       password : 123456
@@ -33,8 +33,8 @@ spring :
         stat-view-servlet:
           enabled: true
           url-pattern: /druid/*
-          login-username: admin
-          login-password: admin
+#           login-username: admin
+#           login-password: admin
         filter:
           stat:
             log-slow-sql: true
